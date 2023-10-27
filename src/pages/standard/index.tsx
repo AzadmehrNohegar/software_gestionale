@@ -3,6 +3,7 @@ import { Dialog } from "../../components/dialog";
 
 function Standard() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isStepperOpen, setIsStepperOpen] = useState(false);
 
   return (
     <Fragment>
@@ -54,10 +55,7 @@ function Standard() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr
-                        data-bs-toggle="modal"
-                        data-bs-target="#kt_modal_machine"
-                      >
+                      <tr onClick={() => setIsStepperOpen(true)}>
                         <td className="border-start px-2"></td>
                         <td className="border-start px-2">WI 46.21</td>
                         <td className="border-start px-2">
@@ -587,6 +585,122 @@ function Standard() {
                         >
                           Salva
                         </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Dialog.Panel>
+      </Dialog>
+      <Dialog isOpen={isStepperOpen} closeModal={() => setIsStepperOpen(false)}>
+        <Dialog.Panel>
+          <div
+            className="modal-content text-start"
+            style={{ width: "60vw", maxWidth: "100vw" }}
+          >
+            <div className="modal-header">
+              <h2>Machine | ...</h2>
+              <div
+                className="btn btn-sm btn-icon btn-active-color-primary"
+                data-bs-dismiss="modal"
+              >
+                <span
+                  className="svg-icon svg-icon-1"
+                  onClick={() => setIsStepperOpen(false)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect
+                      opacity="0.5"
+                      x="6"
+                      y="17.3137"
+                      width="16"
+                      height="2"
+                      rx="1"
+                      transform="rotate(-45 6 17.3137)"
+                      fill="black"
+                    />
+                    <rect
+                      x="7.41422"
+                      y="6"
+                      width="16"
+                      height="2"
+                      rx="1"
+                      transform="rotate(45 7.41422 6)"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div className="modal-body py-lg-5 px-lg-10">
+              <div
+                className="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid"
+                id="kt_modal_create_app_stepper"
+              >
+                <div className="flex-row-fluid  px-lg-15">
+                  <form
+                    className="form"
+                    noValidate
+                    id="kt_modal_create_app_form"
+                  >
+                    <div className="current" data-kt-stepper-element="content">
+                      <div className="w-100">
+                        <div className="form-group row mt-5">
+                          <div className="col-md-6">
+                            <div className="notice d-flex rounded border-gray-500 border border-dashed mb-9 p-4">
+                              <div className="d-flex flex-stack flex-grow-1 ">
+                                <div className=" fw-semibold">
+                                  <div className="fs-6 text-gray-700 ">
+                                    test
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="notice d-flex rounded border-gray-500 border border-dashed mb-9 p-4">
+                              <div className="d-flex flex-stack flex-grow-1 ">
+                                <div className=" fw-semibold">
+                                  <div className="fs-6 text-gray-700 ">
+                                    test
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="form-group row mt-5">
+                          <div className="col-md-6">
+                            <div className="notice d-flex rounded border-gray-500 border border-dashed mb-9 p-4">
+                              <div className="d-flex flex-stack flex-grow-1 ">
+                                <div className=" fw-semibold">
+                                  <div className="fs-6 text-gray-700 ">
+                                    test
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="notice d-flex rounded border-gray-500 border border-dashed mb-9 p-4">
+                              <div className="d-flex flex-stack flex-grow-1 ">
+                                <div className=" fw-semibold">
+                                  <div className="fs-6 text-gray-700 ">
+                                    test
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </form>
