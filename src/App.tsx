@@ -1,10 +1,7 @@
-import { useState } from "react";
-import { DashboardLayout } from "./layouts";
 import BasePage from "./pages";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  fetch("http://3.127.136.7:9980/anagrafica/1").then((res) => console.log(res));
   return <BasePage />;
 }
 
